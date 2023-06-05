@@ -46,7 +46,7 @@ router.get(`/register`, (req, res) => {
 });
 
 router.post("/createUser", async (req, res) => {
-  await fetch("https://proyecto-final-back-end-production.up.railway.app/api/sessions/createUser", {
+  await fetch(`${process.env.DOMAIN_NAME}/api/sessions/createUser`, {
     method: "POST",
     body: JSON.stringify(req.body),
     headers: {
